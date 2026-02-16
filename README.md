@@ -28,7 +28,7 @@
         .btn-pink { width: 90%; height: 55px; background: #ccc; border: none; color: white; font-size: 18px; font-weight: bold; border-radius: 27px; margin: 10px 5%; cursor: not-allowed; transition: 0.3s; }
         .btn-pink.active-btn { background: var(--hot-pink); cursor: pointer; box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4); }
 
-        /* 2. 대기열 (길어진 대기시간) */
+        /* 2. 대기열 (대기시간) */
         .waiting-box { text-align: center; padding-top: 80px; }
         .progress-container { width: 80%; height: 20px; background: #eee; border-radius: 10px; margin: 20px auto; overflow: hidden; border: 2px solid var(--soft-pink); }
         .progress-bar { width: 0%; height: 100%; background: var(--main-pink); transition: 0.5s linear; }
@@ -209,7 +209,7 @@
 
     function checkCaptcha() {
         if(document.getElementById('captchaInput').value.toUpperCase() === document.getElementById('captchaText').innerText) go('stepMap');
-        else { alert("앗! 문자가 틀렸어요. 다시 입력해 주세요."); goCaptcha(); }
+        else { alert("앗! 문자가 틀렸어요!"); goCaptcha(); }
     }
 
     /* 4. 포도알 (극악 난이도 + 이선좌) */
@@ -226,7 +226,7 @@
                 if(this.classList.contains('purple')) {
                     // 이선좌 확률 85% 설정
                     if(Math.random() < 0.85) {
-                        alert("이미 선택된 좌석입니다. (이선좌)");
+                        alert("이미 선택된 좌석입니다.");
                         this.className = 'podo gray';
                     } else {
                         this.style.background = '#ff0000';
